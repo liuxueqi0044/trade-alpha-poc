@@ -1,0 +1,23 @@
+version: 2
+sources:
+  - name: bronze
+    tables:
+      - name: trade_observation
+models:
+  - name: stg_trade_observation
+    description: Source-faithful observations.
+    meta: {owner: trade-alpha-m05, grain: observation_id, model_version: '1.0.0'}
+    columns:
+      - name: observation_id
+        description: Stable source observation key.
+        tests: [not_null, unique]
+      - name: country_code
+        description: ISO country code.
+        tests: [not_null]
+  - name: fct_trade_observation_pit
+    description: Point-in-time gold input.
+    meta: {owner: trade-alpha-m05, grain: observation_id, model_version: '1.0.0'}
+    columns:
+      - name: observation_id
+        description: Stable point-in-time key.
+        tests: [not_null, unique]

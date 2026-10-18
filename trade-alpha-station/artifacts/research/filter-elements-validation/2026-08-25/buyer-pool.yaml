@@ -1,0 +1,332 @@
+schema_version: 1
+observed_at: 2026-08-25T00:00:00Z
+status: public_research_only_no_contact_made
+target: general_industrial_non_toxic_non_combustible_dry_dust_filter_cartridges
+counts: {DE: 20, NL: 10, total: 30}
+tier_meaning:
+  A: legal identity/contact and target product evidence are present on company-owned pages
+  A_pending: strong target fit but legal identity needs one more first-party check
+  B: broad filter channel or manufacturer-channel; purchasing role/product fit must be confirmed
+  C: large or self-manufacturing benchmark; low initial accessibility
+
+buyers:
+  - id: DE01
+    name: FILTERON GmbH
+    country: DE
+    city: Solingen
+    tier: A
+    role: industrial_dust_filter_and_replacement_supplier
+    product_evidence: https://filteron.de/produkte/filterpatronen
+    identity_evidence: https://filteron.de/impressum
+    buying_signal: Custom filter cartridges, application forms, and replacement-oriented product range.
+    red_flags: Exclude food, consumer, combustible dust, and any safety-critical application.
+  - id: DE02
+    name: EURO-Filter GmbH
+    country: DE
+    city: Dortmund
+    tier: A
+    role: industrial_air_and_dust_filter_supplier
+    product_evidence: https://www.euro-filter.de/product/filterpatronen/
+    identity_evidence: https://www.euro-filter.de/impressum/
+    buying_signal: Requests dimensions and mounting details to supply original-fitting pulse cartridges.
+    red_flags: Multi-brand purchasing is not explicit; confirm private-label/external-supplier model first.
+  - id: DE03
+    name: Detzel Filterservice
+    country: DE
+    city: Münster
+    tier: A_pending
+    legal_name_verified: false
+    role: dust_filter_service_and_custom_replacement_channel
+    product_evidence: https://detzel-filterservice.de/
+    identity_evidence: https://detzel-filterservice.de/
+    buying_signal: Industrial dust cartridges plus field maintenance, installation, and custom elements.
+    red_flags: Legal form was not visible in the reviewed first-party text.
+  - id: DE04
+    name: Richters Filter / Ernst Schmidt GmbH
+    country: DE
+    city: Waldbröl
+    tier: A_pending
+    role: dust_extraction_service_and_replacement_channel
+    product_evidence: https://www.richters-filter.de/ersatzfilter
+    identity_evidence: https://www.richters-filter.de/ersatzfilter
+    buying_signal: Replacement elements for third-party extraction equipment and maintenance contracts.
+    red_flags: Registry details need a separate imprint check; exclude welding fume if safety assessment is unclear.
+  - id: DE05
+    name: FILCOM GmbH
+    country: DE
+    city: Ostfildern-Ruit
+    tier: B
+    role: multi_brand_industrial_filter_distributor
+    product_evidence: https://www.filcom-technik.de/filter-compass
+    identity_evidence: https://www.filcom-technik.de/
+    buying_signal: Large cross-reference database across many brands and replacement elements.
+    red_flags: Public range is weighted toward hydraulic and compressed-air filters.
+  - id: DE06
+    name: filfab
+    country: DE
+    city: null
+    tier: B
+    legal_name_verified: false
+    role: manufacturer_independent_filter_distributor
+    product_evidence: https://filfab.de/
+    identity_evidence: https://filfab.de/
+    buying_signal: Claims manufacturer-independent supply of elements, bags, and modules.
+    red_flags: Legal name and city still unverified.
+  - id: DE07
+    name: R+F FilterElements GmbH
+    country: DE
+    city: Hildesheim
+    tier: B
+    role: cross_reference_filter_engineering_channel
+    product_evidence: https://filter-elements.eu/de
+    identity_evidence: https://filter-elements.eu/de
+    buying_signal: Cross references and compatible alternatives for multiple OEM brands.
+    red_flags: Verify registry, operating history, and whether it buys externally or manufactures.
+  - id: DE08
+    name: Fil-Tec Rixen GmbH
+    country: DE
+    city: null
+    tier: B
+    role: filter_system_and_replacement_element_supplier
+    product_evidence: https://www.fil-tec-rixen.com/sortiment/ft-elemente
+    identity_evidence: https://www.fil-tec-rixen.com/
+    buying_signal: Supplies alternatives compatible with several named filter brands.
+    red_flags: Appears to manufacture its own replacement line; external procurement is unknown.
+  - id: DE09
+    name: FilterFritz GmbH
+    country: DE
+    city: null
+    tier: B
+    role: industrial_filter_material_and_spares_webshop
+    product_evidence: https://www.filterfritz.de/
+    identity_evidence: https://www.filterfritz.de/
+    buying_signal: Finds replacements by original number and technical dimensions.
+    red_flags: Broad laboratory/water range; target dry-air product evidence must be confirmed.
+  - id: DE10
+    name: IDEAL Filter
+    country: DE
+    city: Wuppertal
+    tier: B
+    legal_name_verified: false
+    role: compressed_air_filter_and_service_supplier
+    product_evidence: https://idealfilter.de/
+    identity_evidence: https://idealfilter.de/
+    buying_signal: Replacement elements, custom replication, field inventory, and service.
+    red_flags: Compressed-air focus may implicate pressure-system performance; not dry-dust primary.
+  - id: DE11
+    name: MTS & APIC Filter
+    country: DE
+    city: null
+    tier: B
+    legal_name_verified: false
+    role: industrial_filter_supplier
+    product_evidence: https://www.mts-apic-filter.de/Produkte/
+    identity_evidence: https://www.mts-apic-filter.de/
+    buying_signal: Offers compatible elements for existing equipment.
+    red_flags: Also serves food/beverage and liquid applications.
+  - id: DE12
+    name: ELSÄSSER Filtertechnik
+    country: DE
+    city: null
+    tier: B
+    legal_name_verified: false
+    role: industrial_filter_distributor
+    product_evidence: https://www.filter-technik.de/media/e3/33/c9/1684768464/Industrieflyer_A4_8seitig_web.pdf
+    identity_evidence: https://www.filter-technik.de/
+    buying_signal: German/Austrian distribution activity and industrial replacement range.
+    red_flags: Public evidence does not establish broad dry-dust cross-brand purchasing.
+  - id: DE13
+    name: SINBRAN GmbH
+    country: DE
+    city: Glonn
+    tier: B
+    role: membrane_filter_element_manufacturer_and_oem_partner
+    product_evidence: https://sinbran.de/
+    identity_evidence: https://sinbran.de/
+    buying_signal: Positions itself as a filter-element-focused neutral OEM partner.
+    red_flags: Own manufacturing reduces ordinary purchasing probability.
+  - id: DE14
+    name: Filtertechnik Jäger GmbH
+    country: DE
+    city: Weißenhorn
+    tier: B
+    role: industrial_filter_manufacturer_and_system_upgrade_channel
+    product_evidence: https://www.filtertechnik-jaeger.de/produkte/filterelement-corapleat
+    identity_evidence: https://www.filtertechnik-jaeger.de/
+    buying_signal: Replacement/upgrade elements for common housings.
+    red_flags: Own manufacturing and liquid-filtration focus.
+  - id: DE15
+    name: Contec GmbH Industrieausrüstungen
+    country: DE
+    city: null
+    tier: B
+    role: retrofit_filter_element_manufacturer_and_channel
+    product_evidence: https://www.contec-filtration.de/fluessigkeitsfiltration/retrofit-filterelemente
+    identity_evidence: https://www.contec-filtration.de/
+    buying_signal: Retrofit elements compatible with several leading brands.
+    red_flags: Liquid filtration and own manufacturing; not dry-dust primary.
+  - id: DE16
+    name: Filtotec GmbH
+    country: DE
+    city: null
+    tier: B
+    role: custom_filter_element_manufacturer_and_repairer
+    product_evidence: https://filtotec.de/filterelemente
+    identity_evidence: https://filtotec.de/
+    buying_signal: Draw-to-print, one-off/small-batch, and repair work.
+    red_flags: High-temperature/corrosive uses may be hazardous or pressure-related.
+  - id: DE17
+    name: Sager + Mack GmbH & Co. KG
+    country: DE
+    city: Ilshofen-Eckartshausen
+    tier: B
+    role: industrial_filter_system_and_media_supplier
+    product_evidence: https://sager-mack.com/wp-content/uploads/2021/05/Produktportfolio_DIN-A-4_8seitig_web.pdf
+    identity_evidence: https://sager-mack.com/
+    buying_signal: Stocks elements and compares solutions for common systems.
+    red_flags: Chemical/electroplating applications require strict exclusion.
+  - id: DE18
+    name: ASB Filtertechnik GmbH
+    country: DE
+    city: Bad Abbach
+    tier: B
+    role: replacement_filter_supplier
+    product_evidence: https://www.asb-filtertechnik.de/
+    identity_evidence: https://www.asb-filtertechnik.de/impressum/
+    buying_signal: Public site references replacement elements for common manufacturers.
+    red_flags: Visible range skews toward HVAC/ventilation; dry-dust evidence is weak.
+  - id: DE19
+    name: Böcker Filtertechnik GmbH & Co. KG
+    country: DE
+    city: null
+    tier: B
+    role: custom_and_replacement_filter_supplier
+    product_evidence: https://www.boecker-filtertechnik.de/
+    identity_evidence: https://www.boecker-filtertechnik.de/
+    buying_signal: Explicit replacement filters and custom solutions.
+    red_flags: Exact dry-dust product and legal city need confirmation.
+  - id: DE20
+    name: VoTech Filter GmbH
+    country: DE
+    city: Heinsberg
+    tier: B
+    role: dry_dust_filter_manufacturer
+    product_evidence: https://www.votech.de/kontakt
+    identity_evidence: https://www.votech.de/kontakt
+    buying_signal: Sales team and explicit dry-dust filter-cartridge capability.
+    red_flags: Manufacturer; visible portfolio also includes hydrogen/natural-gas applications.
+
+  - id: NL01
+    name: DSI Filters B.V.
+    country: NL
+    city: Zutphen
+    tier: A
+    role: dust_filter_replacement_and_inspection_service
+    product_evidence: https://dsifilters.nl/infastaub-filterinstallaties/
+    identity_evidence: https://dsifilters.nl/contact/
+    registry_id: 'KvK 73326437'
+    buying_signal: Replaces old/new third-party installation elements by model or photo and performs inspections.
+    red_flags: Exclude food, HEPA, oil-mist, and any combustible-dust application.
+  - id: NL02
+    name: EFC Industrial Filtration B.V.
+    country: NL
+    city: Alkmaar
+    tier: A
+    role: multi_brand_industrial_filter_distributor_and_service
+    product_evidence: https://www.efcfiltration.com/nl/
+    identity_evidence: https://www.efcfiltration.com/contact.html
+    buying_signal: All-brand replacement filters, inventory, installation/maintenance, and published purchasing terms.
+    red_flags: Oil/gas, chemical, food, pharma, and gas lines must be excluded.
+  - id: NL03
+    name: Nedfilter B.V. / Vlint
+    country: NL
+    city: Lelystad
+    tier: A
+    role: industrial_filter_and_maintenance_channel
+    product_evidence: https://www.vlint.nl/nl_NL/filtratie
+    identity_evidence: https://www.vlint.nl/en_US/page/149/privacy-policy/
+    registry_id: 'KvK 39081958'
+    buying_signal: Standard/custom elements, installation, maintenance, regeneration, and order-history workflows.
+    red_flags: Own production and ATEX work require product/use separation.
+  - id: NL04
+    name: Holt Filter
+    country: NL
+    city: Middelburg
+    tier: A_pending
+    legal_name_verified: false
+    role: industrial_filter_replacement_and_installation_service
+    product_evidence: https://www.holtfilter.nl/industriele-filters/
+    identity_evidence: https://www.holtfilter.nl/industriele-filters/
+    registry_id: 'KvK 96731559 claimed on site'
+    buying_signal: Replacement, measuring, installation, and pleated elements for industrial dust collection.
+    red_flags: Verify legal name before outreach.
+  - id: NL05
+    name: Lubrafil
+    country: NL
+    city: null
+    tier: B
+    legal_name_verified: false
+    role: multi_brand_industrial_filter_supplier
+    product_evidence: https://lubrafil.nl/oplossingen/producten/filterelementen/
+    identity_evidence: https://lubrafil.nl/
+    buying_signal: Cross-reference database, 200+ brands, inventory, and own Lufil line.
+    red_flags: Broad oil/gas/water/lubrication mix; dry-dust fit is not established.
+  - id: NL06
+    name: ERIKS Nederland B.V.
+    country: NL
+    city: null
+    tier: C
+    role: large_multi_brand_MRO_distributor
+    product_evidence: https://eriks.nl/nl/producten/hydrauliek/filtratie/
+    identity_evidence: https://eriks.nl/
+    buying_signal: Very large catalogue, many manufacturers, replacement references, and filter surveys.
+    red_flags: Large mature procurement organisation and hydraulic focus make initial access unlikely.
+  - id: NL07
+    name: Dutch Filtration
+    country: NL
+    city: Wormerveer
+    tier: B
+    role: liquid_filter_manufacturer_and_supplier
+    product_evidence: https://dutchfiltration.com/nl/producten/filter-elementen/
+    identity_evidence: https://dutchfiltration.com/nl/contact-2/
+    registry_id: 'KvK 65393252'
+    buying_signal: Multi-brand replacements and custom work.
+    red_flags: Liquid filtration; not part of the dry-dust outreach sequence.
+  - id: NL08
+    name: Averinox B.V.
+    country: NL
+    city: Assendelft
+    tier: B
+    role: custom_metal_filter_element_supplier_and_repairer
+    product_evidence: https://averinox.com/nl/products/filter-elements/
+    identity_evidence: https://averinox.com/
+    buying_signal: Interchange by drawing, old element, or OEM reference plus repair services.
+    red_flags: Food, pharma, petrochemical, high-pressure, and hazardous uses must be excluded.
+  - id: NL09
+    name: APH Techniek
+    country: NL
+    city: null
+    tier: B
+    legal_name_verified: false
+    role: hydraulic_component_and_filter_distributor
+    product_evidence: https://www.aphtechniek.nl/filtratie/
+    identity_evidence: https://www.aphtechniek.nl/
+    buying_signal: Supplies cross-brand replacement elements.
+    red_flags: Hydraulic/fuel/water separator focus; not dry-dust primary.
+  - id: NL10
+    name: Filter-webshop.nl
+    country: NL
+    city: null
+    tier: B
+    legal_name_verified: false
+    role: independent_filter_webshop_and_distributor
+    product_evidence: https://filter-webshop.nl/
+    identity_evidence: https://filter-webshop.nl/
+    buying_signal: Cross-references for most filters across industrial, marine, and agricultural uses.
+    red_flags: Also consumer/automotive; legal entity and dry-dust fit need confirmation.
+
+strict_actionable_A_ids: [DE01, DE02, NL01, NL02, NL03]
+A_pending_ids: [DE03, DE04, NL04]
+initial_research_sequence: [NL01, DE01, NL02, DE02, NL03, NL04, DE03, DE04]
+external_contact_made: false
+

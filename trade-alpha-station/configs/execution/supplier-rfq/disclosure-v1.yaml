@@ -1,0 +1,11 @@
+policy_id: supplier-rfq-disclosure
+policy_version: "1.0.0"
+buyer_alias: Trade Alpha Buyer
+artifact_whitelist: []
+disclose_buyer_identity: false
+disclose_buyer_contacts: false
+disclose_competing_suppliers: false
+disclose_internal_targets: false
+disclose_internal_evidence: false
+strip_drawing_metadata: true
+disclose_safety_exclusions: true

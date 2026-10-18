@@ -1,0 +1,113 @@
+spec:
+  name: trade-alpha-poc
+  version: 0.3.0
+  baseline_date: 2026-08-27
+  canonical_index: README.md
+  status: accepted
+  implementation_status: ep01_ep10_verified
+
+modules:
+  - id: M00
+    name: global-baseline
+    document: 00-global-baseline.md
+    acceptance_count: 6
+  - id: M01
+    name: ingestion-evidence
+    document: 01-ingestion-evidence.md
+    acceptance_count: 12
+  - id: M02
+    name: multimodal-extraction
+    document: 02-multimodal-extraction.md
+    acceptance_count: 12
+  - id: M03
+    name: entity-knowledge
+    document: 03-entity-knowledge.md
+    acceptance_count: 12
+  - id: M04
+    name: storage-compute
+    document: 04-storage-compute.md
+    acceptance_count: 12
+  - id: M05
+    name: transformation-quality
+    document: 05-transformation-quality.md
+    acceptance_count: 12
+  - id: M06
+    name: orchestration-observability
+    document: 06-orchestration-observability.md
+    acceptance_count: 12
+  - id: M07
+    name: quant-research
+    document: 07-quant-research.md
+    acceptance_count: 14
+  - id: M08
+    name: research-ui
+    document: 08-research-ui.md
+    acceptance_count: 12
+  - id: M09
+    name: experiment-feedback
+    document: 09-experiment-feedback.md
+    acceptance_count: 14
+  - id: M10
+    name: governance-security
+    document: 10-governance-security.md
+    acceptance_count: 14
+  - id: M11
+    name: source-discovery-onboarding
+    document: 11-source-discovery-onboarding.md
+    acceptance_count: 14
+  - id: EP01
+    name: transaction-contracts
+    document: EP01-transaction-contracts.md
+    acceptance_count: 7
+  - id: EP02
+    name: rfq-evidence-intake
+    document: EP02-rfq-evidence-intake.md
+    acceptance_count: 10
+  - id: EP03
+    name: product-specification-versioning
+    document: EP03-product-specification-versioning.md
+    acceptance_count: 11
+  - id: EP04
+    name: supplier-qualification
+    document: EP04-supplier-qualification.md
+    acceptance_count: 13
+  - id: EP05
+    name: supplier-rfq-dry-run
+    document: EP05-supplier-rfq-dry-run.md
+    acceptance_count: 13
+  - id: EP06
+    name: supplier-quote-comparison
+    document: EP06-supplier-quote-comparison.md
+    acceptance_count: 14
+  - id: EP07
+    name: cost-margin-scenarios
+    document: EP07-cost-margin-scenarios.md
+    acceptance_count: 11
+  - id: EP08
+    name: commercial-risk-policy
+    document: EP08-commercial-risk-policy.md
+    acceptance_count: 12
+  - id: EP09
+    name: operational-readiness-approval
+    document: EP09-operational-readiness-approval.md
+    acceptance_count: 13
+  - id: EP10
+    name: customer-quote-package
+    document: EP10-customer-quote-package.md
+    acceptance_count: 13
+
+cross_module:
+  document: acceptance-traceability.md
+  acceptance_count: 20
+
+totals:
+  module_documents: 22
+  module_acceptance_criteria: 223
+  cross_module_acceptance_criteria: 20
+  acceptance_criteria: 243
+
+change_control:
+  breaking_change_requires_adr: true
+  p0_weakening_requires_adr: true
+  silent_contract_changes_allowed: false
+  chat_is_canonical_spec: false

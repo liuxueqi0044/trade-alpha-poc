@@ -1,0 +1,21 @@
+# Request for quotation
+
+Buyer: {{ structured_request.buyer_alias }}
+Response deadline (UTC): {{ structured_request.response_deadline }}
+Delivery place: {{ structured_request.target_delivery_place }}
+
+## Lines
+{% for line in structured_request.lines %}
+- {{ line.line_id }} — {{ line.quantity_tier.quantity }} {{ line.quantity_tier.unit }}
+{% for requirement in line.requirements %}  - {{ requirement.field_key }}: {{ requirement.value }}
+{% endfor %}{% endfor %}
+
+## Open questions
+{% for question in structured_request.open_questions %}
+- {{ question.question_id }} — {{ question.prompt_key }}
+{% endfor %}
+
+## Commercial terms
+{% for term in structured_request.commercial_terms %}
+- {{ term.key }} — {{ term.prompt_key }}{% if term.required %} (required){% endif %}
+{% endfor %}

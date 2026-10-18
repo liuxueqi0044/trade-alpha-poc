@@ -1,0 +1,181 @@
+catalog_version: 1
+review_policy: all_sources_require_m10_review_and_golden_validation
+sources:
+  - seed_id: un-comtrade
+    title: UN Comtrade API
+    description: Global merchandise trade statistics by reporter, partner, flow, period and HS code.
+    publisher: United Nations Statistics Division
+    publisher_kind: official
+    canonical_url: https://comtradeapi.un.org/
+    domains: [trade-flow, customs, hs]
+    geographies: [global]
+    update_frequency: continuous publication calendar
+    auth_class: free-key-or-preview
+    terms_url: https://comtradeplus.un.org/LicenseAgreement
+    license_claim: UN Comtrade terms; commercial and redistribution review required
+    distributions:
+      - url: https://comtradeapi.un.org/public/v1/preview/C/A/HS
+        format: json
+        media_type: application/json
+
+  - seed_id: eurostat-comext
+    title: Eurostat Comext
+    description: Detailed EU and selected non-EU international trade in goods statistics.
+    publisher: Eurostat
+    publisher_kind: official
+    canonical_url: https://ec.europa.eu/eurostat/web/international-trade-in-goods/database
+    domains: [trade-flow, customs, hs, eu]
+    geographies: [eu]
+    update_frequency: monthly
+    auth_class: none
+    terms_url: https://ec.europa.eu/eurostat/help/copyright-notice
+    license_claim: Commercial reuse generally authorised with attribution; explicit country and trade-data exceptions apply
+    distributions:
+      - url: https://ec.europa.eu/eurostat/api/comext/dissemination
+        format: api
+        media_type: application/json
+
+  - seed_id: us-census-international-trade
+    title: U.S. Census International Trade API
+    description: Monthly U.S. imports and exports by HS, partner, port, state and other classifications.
+    publisher: United States Census Bureau
+    publisher_kind: official
+    canonical_url: https://www.census.gov/data/developers/data-sets/international-trade.html
+    domains: [trade-flow, customs, hs, united-states]
+    geographies: [united-states]
+    update_frequency: monthly
+    auth_class: api-key
+    terms_url: https://www.census.gov/data/developers/about/terms-of-service.html
+    license_claim: U.S. government data; API terms and downstream use review required
+    distributions:
+      - url: https://api.census.gov/data/timeseries/intltrade/exports/hs
+        format: json
+        media_type: application/json
+      - url: https://api.census.gov/data/timeseries/intltrade/imports/hs
+        format: json
+        media_type: application/json
+
+  - seed_id: gleif-lei
+    title: GLEIF LEI API
+    description: Legal entity identity, registration identifiers and corporate relationship data.
+    publisher: Global Legal Entity Identifier Foundation
+    publisher_kind: official
+    canonical_url: https://www.gleif.org/en/lei-data/gleif-api
+    domains: [company, entity-resolution, ownership, counterparty]
+    geographies: [global]
+    update_frequency: three-times-daily golden copy
+    auth_class: none
+    terms_url: https://www.gleif.org/en/meta/lei-data-terms-of-use/
+    license_claim: CC0 1.0
+    distributions:
+      - url: https://api.gleif.org/api/v1/lei-records
+        format: json
+        media_type: application/vnd.api+json
+
+  - seed_id: ted-search-api
+    title: Tenders Electronic Daily Search API
+    description: Published European public procurement notices for analysis and reuse.
+    publisher: Publications Office of the European Union
+    publisher_kind: official
+    canonical_url: https://docs.ted.europa.eu/api/latest/search.html
+    domains: [procurement, tender, buyer-demand, eu]
+    geographies: [eu]
+    update_frequency: daily
+    auth_class: none-for-published-notices
+    terms_url: https://docs.ted.europa.eu/api/latest/search.html
+    license_claim: Reuse supported, including commercial integrations; legal notice review required
+    distributions:
+      - url: https://api.ted.europa.eu/v3/notices/search
+        format: json
+        media_type: application/json
+
+  - seed_id: open-contracting-registry
+    title: Open Contracting Data Registry
+    description: Catalog of OCDS procurement datasets from more than 50 publishers.
+    publisher: Open Contracting Partnership
+    publisher_kind: community
+    canonical_url: https://data.open-contracting.org/en/search/
+    domains: [procurement, tender, contract-award, buyer-demand]
+    geographies: [global]
+    update_frequency: publisher-specific
+    auth_class: none
+    terms_url: https://www.open-contracting.org/data/data-use/
+    license_claim: Registry content CC BY 4.0; every publisher dataset license must be reviewed separately
+    distributions:
+      - url: https://data.open-contracting.org/en/search/
+        format: html-catalog
+        media_type: text/html
+
+  - seed_id: sec-edgar
+    title: SEC EDGAR Data APIs
+    description: U.S. public-company submissions and extracted XBRL facts.
+    publisher: U.S. Securities and Exchange Commission
+    publisher_kind: official
+    canonical_url: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+    domains: [company, financials, filing, counterparty]
+    geographies: [united-states]
+    update_frequency: real-time and nightly bulk
+    auth_class: none-with-declared-user-agent
+    terms_url: https://www.sec.gov/about/privacy-information#security
+    license_claim: Public filings; automated access policy review required
+    distributions:
+      - url: https://data.sec.gov/submissions/
+        format: json
+        media_type: application/json
+      - url: https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip
+        format: zip
+        media_type: application/zip
+
+  - seed_id: ofac-sanctions-list-service
+    title: OFAC Sanctions List Service
+    description: Official U.S. SDN and consolidated non-SDN sanctions list data.
+    publisher: U.S. Department of the Treasury OFAC
+    publisher_kind: official
+    canonical_url: https://ofac.treasury.gov/sanctions-list-service
+    domains: [sanctions, counterparty-risk, vessel-risk]
+    geographies: [global]
+    update_frequency: event-driven
+    auth_class: none
+    terms_url: https://home.treasury.gov/footer/privacy-act
+    license_claim: U.S. government publication; terms review required
+    distributions:
+      - url: https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML
+        format: xml
+        media_type: application/xml
+
+  - seed_id: un-security-council-sanctions
+    title: UN Security Council Consolidated List
+    description: Individuals and entities subject to UN Security Council measures.
+    publisher: United Nations Security Council
+    publisher_kind: official
+    canonical_url: https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list
+    domains: [sanctions, counterparty-risk]
+    geographies: [global]
+    update_frequency: event-driven
+    auth_class: none
+    terms_url: https://www.un.org/en/about-us/terms-of-use
+    license_claim: UN website terms; automated reuse review required
+    distributions:
+      - url: https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list
+        format: xml-and-html
+        media_type: text/html
+
+  - seed_id: uk-sanctions-list
+    title: UK Sanctions List
+    description: Official UK designations in machine-readable CSV and XML formats.
+    publisher: UK Foreign Commonwealth and Development Office
+    publisher_kind: official
+    canonical_url: https://www.gov.uk/government/publications/the-uk-sanctions-list
+    domains: [sanctions, counterparty-risk, vessel-risk]
+    geographies: [united-kingdom, global]
+    update_frequency: event-driven
+    auth_class: none
+    terms_url: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+    license_claim: Open Government Licence 3.0 review required
+    distributions:
+      - url: https://sanctionslist.fcdo.gov.uk/docs/UK-Sanctions-List.csv
+        format: csv
+        media_type: text/csv
+      - url: https://sanctionslist.fcdo.gov.uk/docs/UK-Sanctions-List.xml
+        format: xml
+        media_type: application/xml

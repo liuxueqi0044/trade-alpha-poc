@@ -1,0 +1,80 @@
+schema_version: 1
+observed_at: 2026-08-25T00:00:00Z
+scope: China origin to Germany or Netherlands; non-pressure, non-safety-critical industrial replacement filter element
+status: SKU_specific_classification_and_costs_unresolved
+
+customs:
+  candidate_heading: '8421'
+  candidate_paths: ['8421.39 gas filtering apparatus', '8421.99 other filtering machinery parts', other material/function heading]
+  tariff_rate: null
+  tariff_reason: Complete SKU description, material, function, photos, drawing, and whether it is a part or independent apparatus are missing.
+  official_taric: https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp
+  trade_defence: https://policy.trade.ec.europa.eu/enforcement-and-protection/trade-defence/anti-dumping-measures_en
+  required_before_quote:
+    - Obtain ten-digit TARIC code for the actual SKU and China origin.
+    - Capture base duty, additional measure, restriction, and trade-remedy text effective on quote date.
+    - Seek importer/broker review or Binding Tariff Information for material value or recurring trade.
+
+regulatory:
+  CE:
+    status: generally_not_applicable_to_standalone_element_within_frozen_scope
+    official_source: https://europa.eu/youreurope/business/product-rules-compliance/general-product-compliance/ce-marking/index_en.htm
+    reopen_if: [pressure_boundary, motor, sensor, controller, heater, complete_machine, safety_function]
+  REACH_SVHC:
+    status: applicable_supply_chain_material_review
+    official_source: https://echa.europa.eu/regulations/reach/candidate-list-substances-in-articles
+    required_materials: [filter_media, adhesive, coating, end_caps, support_mesh, seals, labels]
+  GPSR_B2B:
+    status: pure_B2B_boundary_requires_channel_and_foreseeable_use_review
+    official_source: https://webgate.ec.europa.eu/safety/consumers/consumers_safety_gate/obligationsForBusinesses/documents/Q%26A.pdf
+  Germany_packaging:
+    registration: https://www.verpackungsregister.org/en/registration/find-out-about-registrations
+    system_participation: https://www.verpackungsregister.org/en/information-system-participation-and-data-reporting
+    status: importer_first_placer_packaging_type_and_weight_required
+  Netherlands_packaging:
+    role_source: https://www.verpact.nl/sites/default/files/2025-10/PPWR-rollen-EN-v1.pdf
+    status: importer_first_placer_packaging_type_weight_and_threshold_review_required
+  product_liability:
+    note: Importer, own-brand seller, and product modifier can carry additional exposure; lack of CE does not remove liability.
+
+tax:
+  DE_import_VAT_standard_pct: 19
+  DE_source: https://www.bundesfinanzministerium.de/Content/DE/Glossareintraege/E/einfuhrumsatzsteuer.html?view=renderHelp
+  NL_import_VAT_standard_pct: 21
+  NL_source: https://www.belastingdienst.nl/wps/wcm/connect/belastingdienst.nl/wps/wcm/connect/en/business/content/vat-tariffs
+  treatment: Track as a cash-flow item separately; recoverability depends on importer/VAT status and is not assumed.
+
+incoterms:
+  sample_preferred: [FCA_named_supplier_site, DAP_named_destination_with_importer_explicit]
+  small_order_compare: [FCA, FOB, CPT_or_CIP, DAP]
+  batch_compare: [FCA, FOB, CIF_or_CIP, DAP]
+  avoid_without_import_structure: [DDP]
+  mandatory_format: named_place_plus_Incoterms_2020
+
+landed_cost_formula:
+  customs_value: goods_value_plus_dutiable_transport_and_insurance
+  customs_duty: customs_value_times_confirmed_TARIC_rate
+  import_VAT_base: customs_value_plus_duty_plus_legally_included_costs
+  import_VAT: import_VAT_base_times_country_rate
+  unit_full_cost: total_project_cost_divided_by_saleable_units
+  total_project_cost_components:
+    - product_and_packaging
+    - tooling_sample_and_testing
+    - supplier_and_third_party_inspection
+    - China_inland_export_documents_and_origin_charges
+    - international_freight_and_insurance
+    - destination_port_customs_broker_storage_and_delivery
+    - customs_duty_and_nonrecoverable_tax
+    - packaging_EPR_and_compliance_service
+    - FX_payment_financing_and_bad_debt
+    - defect_rework_warranty_reshipment_and_recall_reserve
+  real_price_inputs_present: false
+
+quote_blockers:
+  - actual buyer SKU, use statement, dimensions, media, efficiency, airflow, pressure-drop, and quantity
+  - confirmed ten-digit TARIC and effective measures
+  - importer of record, EORI, VAT, packaging-EPR, and product-liability role
+  - at least two comparable supplier quotations with identical specification and Incoterm
+  - freight quote using packed dimensions, gross weight, CBM, stackability, and destination
+  - inspection, test, warranty, defect, FX, and financing assumptions
+

@@ -1,0 +1,31 @@
+profile_id: FE-DRY-01
+profile_version: 1.0.0
+commercial_validation_ref: artifacts/research/filter-elements-validation/2026-08-25/compliance-and-cost.yaml
+allowed_scope: [general_industrial_dry_dust]
+hard_exclusions: [toxic_dust, combustible_dust, atex, explosion_proof, food, medical, respiratory, fire, pressure]
+normalizer_versions:
+  - {name: pint, version: 0.25.3}
+identity_alternatives:
+  - [oem_model_reference]
+  - [photo_reference]
+  - [drawing_reference]
+  - [outer_diameter, inner_diameter, length]
+quantity_alternatives:
+  - [first_order_quantity]
+  - [tier_quantities]
+field_definitions:
+  - {key: application_scope, value_kind: text, criticality: safety_scope, required_at: [supplier_rfq]}
+  - {key: dust_toxicity, value_kind: boolean, criticality: safety_scope, required_at: [supplier_rfq]}
+  - {key: dust_combustibility, value_kind: boolean, criticality: safety_scope, required_at: [supplier_rfq]}
+  - {key: atex_required, value_kind: boolean, criticality: safety_scope, required_at: [supplier_rfq]}
+  - {key: oem_model_reference, value_kind: reference}
+  - {key: photo_reference, value_kind: document}
+  - {key: drawing_reference, value_kind: document}
+  - {key: outer_diameter, value_kind: quantity, canonical_unit: mm, accepted_units: [mm, inch]}
+  - {key: inner_diameter, value_kind: quantity, canonical_unit: mm, accepted_units: [mm, inch]}
+  - {key: length, value_kind: quantity, canonical_unit: mm, accepted_units: [mm, inch]}
+  - {key: first_order_quantity, value_kind: quantity, canonical_unit: piece, accepted_units: [piece]}
+  - {key: tier_quantities, value_kind: quantity, canonical_unit: piece, accepted_units: [piece], requirement_mode: supplier_proposable}
+  - {key: filter_material, value_kind: text, requirement_mode: supplier_proposable, required_at: [supplier_rfq]}
+  - {key: performance_requirement, value_kind: text, requirement_mode: supplier_proposable, required_at: [supplier_rfq]}
+  - {key: packaging_requirement, value_kind: text, requirement_mode: supplier_proposable, required_at: [supplier_rfq]}

@@ -1,0 +1,143 @@
+schema_version: 1
+observed_at: 2026-08-25T00:00:00Z
+status: discovery_candidates_not_verified_suppliers
+warning: >-
+  A manufacturing trace, tender result, cluster membership, environmental filing, recruitment post,
+  or platform listing does not by itself prove current production, ownership of every process,
+  export readiness, available capacity, or willingness to contract.
+
+candidates:
+  PM-013:
+    - name: 普瑞奇科技（沧州）有限公司
+      location: 河北沧州
+      evidence_type: government_manufacturing_profile
+      evidence_url: https://ipr.mofcom.gov.cn/article/gnxw/zfbm/zfbmdf/hb/202602/1995250.html
+      proves: Production base and filter-element materials/applications are publicly described.
+      does_not_prove: Non-pressure scope for every SKU or current small-order availability.
+    - name: 泰兴市佳林石化机械制造有限公司
+      location: 江苏泰兴
+      evidence_type: industrial_procurement_candidate
+      evidence_url: https://wuzhuang-buket02.oss-cn-beijing.aliyuncs.com/Announcement/Announcement/ce5c4f93-d63c-4f7f-b0b6-7975b274f62e/%E4%B8%AD%E6%A0%87%E5%80%99%E9%80%89%E4%BA%BA%E5%85%AC%E7%A4%BA.pdf
+      proves: Public evidence of industrial filter-element supply activity.
+      does_not_prove: All products are non-pressure or non-safety-critical.
+    - name: 佛山市顺德区金磊环保科技有限公司
+      location: 广东佛山/安徽合肥
+      evidence_type: local_government_enterprise_profile
+      evidence_url: https://sdjy.shunde.gov.cn/index/user/companydetail.html?id=3694
+      proves: Disclosed production bases and filter capacity.
+      does_not_prove: Government-verified capacity, export readiness, or current availability.
+    - name: 抚顺工业滤料产业集群
+      location: 辽宁抚顺
+      evidence_type: provincial_industry_cluster
+      evidence_url: https://gxt.ln.gov.cn/gxt/zfxxgk/fdzdgknr/jyta/srddbjy/sssjrdechy2024n/2024093015164575879/index.shtml
+      proves: A supported filter-material cluster exists.
+      does_not_prove: Identity or fitness of an individual supplier.
+
+  PM-005:
+    - name: 宁波新艺密封件有限公司
+      location: 浙江宁波
+      evidence_type: industrial_procurement_candidate
+      evidence_url: https://www.chnenergybidding.com.cn/bidweb/001/001005/001005001/20260415/c3948ab7-b942-49bc-8e0b-4bc44e7e064a.html
+      proves: Public industrial sealing-product supply evidence.
+      does_not_prove: Non-safety-critical scope for every SKU or ownership of all processes.
+    - name: 慈溪市新颖密封元件有限责任公司
+      location: 浙江慈溪
+      evidence_type: industrial_procurement_candidate
+      evidence_url: https://www.chnenergybidding.com.cn/bidweb/001/001005/001005001/20260415/c3948ab7-b942-49bc-8e0b-4bc44e7e064a.html
+      proves: Industrial sealing-product supply activity.
+      does_not_prove: In-house formulation, moulding, vulcanisation, or export readiness.
+    - name: 沈阳市澳盛橡胶密封件有限公司
+      location: 辽宁沈阳
+      evidence_type: public_procurement_candidate
+      evidence_url: https://www.ccgp.gov.cn/cggg/zygg/zbgg/202608/t20260817_27147777.htm
+      proves: Custom seal processing project experience.
+      does_not_prove: Export experience or batch capacity.
+
+  PM-016:
+    - name: 中山市华泽包装有限公司
+      location: 广东中山
+      evidence_type: environmental_filing
+      evidence_url: https://zsepb.zs.gov.cn/attachment/0/554/554270/2570231.pdf
+      proves: PET tray products, equipment, site, and capacity are described in an official filing.
+      does_not_prove: Current output or exclusive non-food industrial positioning.
+    - name: 重庆天捷电子有限公司
+      location: 重庆万盛
+      evidence_type: environmental_filing
+      evidence_url: https://ws.cq.gov.cn/bm/hbj/zwgk_70287/fdzdgknr_70290/zdxmyxpj/jsxmhpspqk/202111/W020240812350288157118.pdf
+      proves: Thermoforming lines, machines, site, and PET capacity are described.
+      does_not_prove: Ability to make large logistics pallets.
+    - name: 郑州市伟宏塑业有限公司
+      location: 河南郑州
+      evidence_type: environmental_approval
+      evidence_url: https://public.zhengzhou.gov.cn/D250406X/10010399.jhtml
+      proves: A plastic-pallet production project and process are described.
+      does_not_prove: PET/PP material split or target specifications.
+
+  PM-003:
+    - name: 武汉大福芯科技有限公司
+      location: 湖北武汉
+      evidence_type: industrial_procurement_candidate
+      evidence_url: https://www.csscbidding.com/jyxx/003002/003002003/20260710/294118a8-e1db-4415-98cc-0b2ab23d5cea.html
+      proves: Enclosure fabrication quotation activity.
+      does_not_prove: Low-risk product scope; the cited project itself may be safety-critical.
+    - name: 江门钣金机柜扩建项目（主体待从原始文件核验）
+      location: 广东江门
+      evidence_type: environmental_filing
+      evidence_url: https://www.jiangmen.gov.cn/attachment/0/326/326185/3212520.pdf
+      proves: A sheet-metal cabinet project and expansion capacity exist in the filing.
+      does_not_prove: A contactable legal entity until the original cover page is verified.
+
+  PM-020:
+    - name: 新疆天业节水灌溉股份有限公司
+      location: 新疆石河子
+      evidence_type: ministry_profile
+      evidence_url: https://jhs.moa.gov.cn/lsfz/202601/t20260130_6481180.htm
+      proves: Integrated irrigation manufacturing and overseas promotion are described.
+      does_not_prove: Suitability for small orders of ordinary fittings.
+    - name: 甘肃亚盛亚美特节水有限公司
+      location: 甘肃兰州新区等
+      evidence_type: local_government_profile
+      evidence_url: https://www.lzxq.gov.cn/system/2018/12/12/000071254.shtml
+      proves: Multiple factories, production lines, materials, and capacity are described.
+      does_not_prove: Current fitting-specific product line.
+    - name: 河北润农节水科技股份有限公司
+      location: 河北
+      evidence_type: standard_drafter_and_quality_sampling
+      evidence_url: https://std.samr.gov.cn/gb/search/gbDetailed?id=91890A0DA53F80C6E05397BE7BE97A0A065D
+      proves: Participation in a relevant national standard.
+      does_not_prove: Current fitting capacity or export readiness.
+
+  PM-006:
+    - name: 河北冀南紧固件股份有限公司
+      location: 河北邯郸永年
+      evidence_type: provincial_cluster_list
+      evidence_url: https://gxt.hebei.gov.cn/sme/tzgg45/2025042122161176937/2024102815011893561.pdf
+      proves: Legal entity is included in an official fastener-cluster list.
+      does_not_prove: Stainless product line, capacity, or export readiness.
+    - name: 河北固耐安工业股份有限公司
+      location: 河北邯郸永年
+      evidence_type: provincial_cluster_list
+      evidence_url: https://gxt.hebei.gov.cn/sme/tzgg45/2025042122161176937/2024102815011893561.pdf
+      proves: Legal entity is included in an official fastener-cluster list.
+      does_not_prove: Stainless product line, capacity, or export readiness.
+    - name: 永年紧固件产业集群
+      location: 河北邯郸永年
+      evidence_type: provincial_cluster_profile
+      evidence_url: https://gxt.hebei.gov.cn/sme/ztzl5/hbtscycxtsxqpt33/gdscy/hds76/2025042122152374119/index.html
+      proves: A broad fastener cluster, scale, specifications, and export activity are described.
+      does_not_prove: Fitness of any individual supplier.
+    - name: 海盐紧固件产业集群
+      location: 浙江海盐
+      evidence_type: provincial_cluster_profile
+      evidence_url: https://zj87.jxt.zj.gov.cn/zlzq/citySite/views/article/news/detailjx.html?id=282155
+      proves: A major fastener production base and industrial chain exist.
+      does_not_prove: Fitness of any individual supplier.
+
+verification_required_before_contact_shortlist:
+  - Active status and unified social credit code from the official enterprise registry.
+  - Factory address cross-check against environmental, permit, recruitment, procurement, and map evidence.
+  - Video or onsite audit of target process, equipment, warehouse, laboratory, and traceability records.
+  - Target SKU, material, capacity, MOQ, lead time, subcontracted operations, and change-control disclosure.
+  - Export and certification claims verified against certificate issuer, legal entity, site, model, and scope.
+  - Sample and third-party test passed before any production commitment.
+

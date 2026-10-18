@@ -1,0 +1,92 @@
+schema_version: 1
+observed_at: 2026-08-25T00:00:00Z
+currency: USD
+annual_value_unit: million
+measure: UN_Comtrade_primaryValue_current_USD
+flow: imports
+classification: HS_2022_proxy
+reporters:
+  DE: 276
+  NL: 528
+  PL: 616
+  US: 842
+partners:
+  WORLD: 0
+  CN: 156
+
+queries:
+  world_imports: >-
+    https://comtradeapi.un.org/public/v1/preview/C/A/HS?period={2023|2024|2025}&reporterCode=276,528,616,842&flowCode=M&partnerCode=0&cmdCode=842199,401693,392390,853810,391740,731815,731816&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500
+  china_imports_2024: >-
+    https://comtradeapi.un.org/public/v1/preview/C/A/HS?period=2024&reporterCode=276,528,616,842&flowCode=M&partnerCode=156&cmdCode=842199,401693,392390,853810,391740,731815,731816&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500
+  ted_endpoint: https://api.ted.europa.eu/v3/notices/search
+  ted_window: 2023-08-25_to_2026-08-25
+
+observations:
+  - id: PM-013
+    proxy_hs: [842199]
+    imports_usd_m:
+      DE: {2023: 1156.9, 2024: 1146.6, 2025: 1251.6}
+      NL: {2023: 365.9, 2024: 408.1, 2025: 460.3}
+      PL: {2023: 243.1, 2024: 252.3, 2025: 254.9}
+      US: {2023: 2111.9, 2024: 2339.1, 2025: 2362.5}
+    china_share_2024_pct: {DE: 11.9, NL: 11.1, PL: 13.0, US: 16.4}
+    ted: {cpv: '42912300', notices_36m: 1552}
+    limitation: HS includes filtering/purifying machinery parts beyond non-pressure filter elements; CPV includes complete apparatus.
+  - id: PM-005
+    proxy_hs: [401693]
+    imports_usd_m:
+      DE: {2023: 1594.9, 2024: 1571.7, 2025: 1674.5}
+      NL: {2023: 244.1, 2024: 250.2, 2025: 256.1}
+      PL: {2023: 369.9, 2024: 376.4, 2025: 416.2}
+      US: {2023: 2450.2, 2024: 2497.1, 2025: 2486.1}
+    china_share_2024_pct: {DE: 6.4, NL: 4.8, PL: 7.4, US: 10.0}
+    ted: {cpv: '44425200', notices_36m: 68}
+    limitation: HS covers vulcanised-rubber gaskets and seals, not all silicone products, and cannot remove safety-critical uses.
+  - id: PM-016
+    proxy_hs: [392390]
+    imports_usd_m:
+      DE: {2023: 730.9, 2024: 671.1, 2025: 789.0}
+      NL: {2023: 301.7, 2024: 280.7, 2025: 318.9}
+      PL: {2023: 194.4, 2024: 211.5, 2025: 230.9}
+      US: {2023: 1787.2, 2024: 1973.7, 2025: 1900.2}
+    china_share_2024_pct: {DE: 4.7, NL: 11.1, PL: 11.3, US: 17.5}
+    ted: {cpv: '44143000', notices_36m: 149}
+    limitation: HS and CPV cannot isolate PET versus PP, thermoformed inserts versus pallets, or excluded food/medical uses.
+  - id: PM-003
+    proxy_hs: [853810]
+    imports_usd_m:
+      DE: {2023: 441.2, 2024: 341.5, 2025: 375.4}
+      NL: {2023: 147.7, 2024: 135.4, 2025: 123.1}
+      PL: {2023: 171.3, 2024: 135.3, 2025: 127.8}
+      US: {2023: 383.3, 2024: 430.7, 2025: 571.8}
+    china_share_2024_pct: {DE: 4.2, NL: 4.9, PL: 2.4, US: 6.2}
+    ted: {cpv: '31219000', notices_36m: 128}
+    limitation: HS covers only parts principally used with heading 8537; many bare metal enclosures fall elsewhere.
+  - id: PM-020
+    proxy_hs: [391740]
+    imports_usd_m:
+      DE: {2023: 828.6, 2024: 766.7, 2025: 868.8}
+      NL: {2023: 255.6, 2024: 235.7, 2025: 249.1}
+      PL: {2023: 241.7, 2024: 233.0, 2025: 242.9}
+      US: {2023: 764.7, 2024: 801.4, 2025: 689.3}
+    china_share_2024_pct: {DE: 5.3, NL: 1.9, PL: 6.2, US: 14.1}
+    ted: {cpv: '43323000', notices_36m: 430}
+    limitation: HS covers all plastic tube and pipe fittings; CPV generally includes complete irrigation equipment.
+  - id: PM-006
+    proxy_hs: [731815, 731816]
+    aggregation: sum
+    imports_usd_m:
+      DE: {2023: 3018.6, 2024: 2642.4, 2025: 2963.2}
+      NL: {2023: 709.1, 2024: 647.9, 2025: 661.9}
+      PL: {2023: 749.8, 2024: 741.8, 2025: 775.5}
+      US: {2023: 4251.8, 2024: 4572.7, 2025: 4228.6}
+    china_share_2024_pct: {DE: 10.9, NL: 8.5, PL: 14.5, US: 20.0}
+    ted: {cpv: '44530000', notices_36m: 1014}
+    limitation: HS sum includes broad materials and uses, not stainless steel only or non-safety-critical applications.
+
+quality_notes:
+  - The four 2025 world-partner rows independently rechecked by SOL were marked isReported=false and isAggregate=true; 2024 partner rows had mixed flags. Retain every provider flag when ingested and do not describe these aggregates as raw customs declarations.
+  - TED notice totals are neither unique buyers nor contracts and do not measure private OEM/MRO demand.
+  - Wide HS and CPV buckets are demand proxies; a real RFQ is required before product-level economics are claimed.
+  - The Comtrade preview endpoint rate-limited with HTTP 429 during research; retry-after was respected.

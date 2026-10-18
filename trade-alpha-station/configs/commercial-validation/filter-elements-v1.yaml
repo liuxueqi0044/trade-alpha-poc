@@ -1,0 +1,163 @@
+schema_version: 1
+experiment_id: FE-EU-001
+version: 0.1.0
+observed_at: 2026-08-25T00:00:00Z
+decision_owner: SOL
+status: outreach_ready_not_authorized
+
+scope:
+  origin_country: CN
+  target_markets:
+    primary: DE
+    secondary: NL
+  product_family: non_pressure_non_safety_critical_industrial_replacement_filter_elements
+  subproduct_universe:
+    - id: FE-DRY-01
+      name: general_industrial_dust_collector_cartridge
+      priority: primary
+      allowed_use: non_toxic_non_combustible_dry_dust_in_general_manufacturing
+    - id: FE-AIR-02
+      name: general_industrial_air_filter_element
+      priority: challenger
+      allowed_use: non_respiration_non_fire_non_cleanroom_general_equipment_air
+    - id: FE-LUBE-03
+      name: low_risk_lubrication_or_return_filter_element
+      priority: buyer_led
+      allowed_use: non_pressure_boundary_non_hazardous_equipment_maintenance
+    - id: FE-LIQ-04
+      name: general_industrial_liquid_filter_cartridge
+      priority: reserve
+      allowed_use: non_food_non_drinking_non_medical_non_hazardous_media
+
+hard_exclusions:
+  - pressure_housing_or_pressure_retaining_boundary
+  - toxic_combustible_or_explosive_dust
+  - dangerous_corrosive_or_unknown_media
+  - food_drinking_water_medical_or_pharmaceutical
+  - respiration_fire_protection_or_cleanroom_critical
+  - nuclear_aviation_automotive_safety_or_life_safety
+  - filter_with_motor_sensor_controller_heater_or_complete_machine
+  - consumer_or_household_replacement_filter
+  - borrowed_mismatched_or_unverifiable_certificate
+  - no_batch_traceability_or_uncontrolled_material_change
+
+buyer_qualification:
+  required:
+    - active_business_identity
+    - company_owned_product_evidence
+    - industrial_b2b_role
+    - replacement_cross_reference_service_or_multi_brand_inventory
+    - public_contact_channel
+    - target_use_not_exclusively_excluded
+  score_weights:
+    channel_role_fit: 25
+    dry_air_filter_fit: 20
+    replacement_or_cross_reference_evidence: 20
+    recurring_service_or_inventory_signal: 15
+    accessibility: 10
+    risk_fit: 10
+  tiers:
+    A: independent_distributor_or_service_provider_with_two_first_party_evidence_pages
+    B: manufacturer_plus_channel_or_product_scope_needing_confirmation
+    C: large_benchmark_or_low_accessibility_account
+
+supplier_qualification:
+  required_before_rfq:
+    - active_legal_entity_and_matching_payee
+    - verified_manufacturing_address
+    - target_filter_element_made_at_that_site
+    - at_least_two_independent_evidence_types_or_one_official_manufacturing_record
+    - disclosed_in_house_and_subcontracted_processes
+    - accepts_sample_testing_and_batch_traceability
+    - agrees_no_material_or_process_change_without_written_approval
+  score_weights:
+    independent_manufacturing_evidence: 25
+    target_product_fit: 20
+    process_and_equipment_evidence: 15
+    test_capability: 15
+    traceability_and_change_control: 15
+    commercial_flexibility_and_export_documents: 10
+  evidence_tiers:
+    A: two_or_more_independent_sources_and_target_product_match
+    B: single_source_or_material_scope_gap_requiring_documents
+    rejected: identity_site_process_or_scope_conflict
+
+minimum_product_spec:
+  - application_and_end_use_industry
+  - equipment_brand_model_and_oem_reference
+  - photos_and_drawing_revision
+  - outer_inner_diameter_length_and_interface
+  - filter_media_end_caps_adhesive_and_seal_materials
+  - filtration_efficiency_and_test_standard
+  - rated_airflow_and_initial_final_pressure_drop
+  - temperature_humidity_and_dust_characteristics
+  - prohibited_media_and_prohibited_uses
+  - expected_service_life_and_change_interval
+  - annual_demand_first_order_quantity_and_forecast
+  - packaging_label_barcode_and_batch_requirements
+
+sample_acceptance:
+  - dimensional_report
+  - bill_of_materials_and_material_declarations
+  - visual_burr_crack_contamination_and_delamination_check
+  - seal_and_installation_fit
+  - filtration_efficiency_test_with_method
+  - initial_pressure_drop_and_rated_airflow
+  - media_temperature_and_humidity_compatibility
+  - packaging_compression_and_moisture_protection
+  - label_batch_and_traceability_test
+  - retained_reference_sample
+
+customs_and_compliance:
+  classification_status: unresolved_until_specific_sku
+  candidate_heading: '8421'
+  candidate_paths: ['8421.39', '8421.99', other_material_or_complete_filter_heading]
+  required_checks:
+    - EU_TARIC_10_digit_code_and_CN_explanatory_basis
+    - China_origin_trade_defence_and_additional_measures
+    - REACH_SVHC_material_declaration
+    - pure_B2B_GPSR_boundary
+    - Germany_LUCID_and_system_participation_role
+    - Netherlands_packaging_EPR_role
+    - importer_EORI_VAT_and_product_liability_roles
+  assumptions_forbidden:
+    - filter_element_always_equals_842199
+    - no_CE_means_no_compliance
+    - import_VAT_is_always_a_permanent_cost
+    - supplier_DDP_means_EU_import_and_tax_roles_are_valid
+
+economics_gate:
+  base_case_contribution_margin_pct_min: 18
+  stress_case_contribution_margin_pct_min: 10
+  required_inputs:
+    - supplier_unit_price_and_quantity_breaks
+    - tooling_sample_inspection_and_test_cost
+    - packaging_dimensions_weights_and_stackability
+    - China_inland_export_and_origin_charges
+    - international_freight_insurance_and_destination_charges
+    - confirmed_tariff_and_customs_value
+    - recoverable_and_nonrecoverable_VAT_cash_flow
+    - packaging_EPR_and_compliance_cost
+    - defect_rework_warranty_replacement_and_recall_reserve
+    - FX_financing_payment_terms_and_bad_debt_reserve
+  price_data_status: no_real_quote_yet
+
+validation_gate:
+  buyer_pool: {DE: 20, NL: 10}
+  qualified_buyer_tier_A_min: 10
+  valid_buyer_problem_confirmations_min: 3
+  real_rfq_min: 1
+  target_rfq: 3
+  supplier_longlist_min: 12
+  supplier_document_pass_min: 5
+  sample_candidate_min: 3
+  comparable_landed_cost_quotes_min: 2
+  external_actions_authorized: false
+  external_actions_requiring_approval:
+    - send_buyer_message
+    - send_supplier_rfq
+    - disclose_buyer_or_supplier_identity_to_counterparty
+    - pay_sample_test_certification_or_freight
+    - sign_NDA_exclusivity_quality_or_purchase_agreement
+    - place_order_or_make_price_commitment
+

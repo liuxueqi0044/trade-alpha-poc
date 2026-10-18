@@ -1,0 +1,82 @@
+schema_version: 1
+decision_version: 0.1.0
+observed_at: 2026-08-25T00:00:00Z
+decision_owner: SOL
+status: research_shortlist
+
+scope:
+  origin_country: CN
+  initial_target_markets: [DE, NL, PL, US]
+  note: Other markets may enter only after a documented evidence review.
+
+score_model:
+  scale: 1_to_5
+  weights:
+    demand_fit: 25
+    supply_advantage: 20
+    execution_simplicity: 20
+    transaction_defensibility: 20
+    economics_proxy: 15
+  components:
+    demand_fit: [demand_observability, recurrence, buyer_fragmentation]
+    supply_advantage: [supply_breadth, non_platform_discovery, factory_verifiability]
+    execution_simplicity: [regulatory_simplicity, logistics_fitness, aftersales_simplicity]
+  formula: >-
+    raw_total = weighted mean of the five dimensions on a 0-100 scale;
+    risk_adjusted_total = raw_total * evidence_confidence.
+  warning: >-
+    Scores are screening proxies, not observed profit, legal conclusions, or proof of buyer demand.
+
+hard_exclusions:
+  - food_or_drinking_water_contact
+  - medical_or_respiration_use
+  - pressure_retaining_safety_boundary
+  - dangerous_media_or_explosive_atmosphere
+  - fire_or_life_safety_use
+  - structural_or_load_bearing_building_use
+  - automotive_safety_or_aviation_or_nuclear_use
+  - complete_energized_equipment_without_product_specific_review
+  - unclear_customs_classification_or_trade_remedy_scope
+  - borrowed_or_mismatched_certificate
+  - supplier_without_batch_traceability_or_change_control
+
+stage_definitions:
+  primary_poc: Start buyer and factory validation after all hard gates pass.
+  challenger: Validate in parallel but do not allocate the main outreach budget yet.
+  buyer_led_only: Activate only after a real RFQ/drawing/specification is observed.
+  benchmark_only: Track as a commodity control; do not lead with it.
+  reserve: Preserve in the universe pending better evidence or a market-specific thesis.
+  deferred_risk: Do not enter the first commercial experiment.
+
+candidates:
+  - {id: PM-001, name_zh: CNC非标机加工件, demand: [3, 4, 4], supply: [5, 5, 4], execution: [4, 4, 3], defensibility: 5, economics: 4, evidence_confidence: 0.75, raw_total: 83.7, risk_adjusted_total: 62.7, stage: buyer_led_only}
+  - {id: PM-002, name_zh: 精密铸件, demand: [3, 3, 3], supply: [4, 5, 4], execution: [3, 3, 2], defensibility: 5, economics: 3, evidence_confidence: 0.75, raw_total: 72.0, risk_adjusted_total: 54.0, stage: reserve}
+  - {id: PM-003, name_zh: 钣金工业机箱/外壳, demand: [4, 4, 4], supply: [5, 4, 4], execution: [4, 3, 3], defensibility: 4, economics: 3.5, evidence_confidence: 0.85, raw_total: 77.2, risk_adjusted_total: 65.6, stage: buyer_led_only}
+  - {id: PM-004, name_zh: 注塑工业零件, demand: [3, 5, 4], supply: [5, 4, 4], execution: [4, 5, 3], defensibility: 4.5, economics: 4, evidence_confidence: 0.75, raw_total: 83.3, risk_adjusted_total: 62.5, stage: buyer_led_only}
+  - {id: PM-005, name_zh: 橡胶/硅胶密封件, demand: [4, 5, 4], supply: [4, 5, 3], execution: [3, 5, 2], defensibility: 4.5, economics: 4.5, evidence_confidence: 0.85, raw_total: 82.5, risk_adjusted_total: 70.1, stage: challenger}
+  - {id: PM-006, name_zh: 不锈钢工业紧固件, demand: [5, 5, 5], supply: [5, 4, 5], execution: [4, 5, 3], defensibility: 2, economics: 3, evidence_confidence: 0.90, raw_total: 76.7, risk_adjusted_total: 69.0, stage: benchmark_only}
+  - {id: PM-007, name_zh: 电缆接头/格兰头, demand: [3, 5, 4], supply: [3, 4, 3], execution: [2, 5, 2], defensibility: 2.5, economics: 4, evidence_confidence: 0.70, raw_total: 67.3, risk_adjusted_total: 47.1, stage: deferred_risk}
+  - {id: PM-008, name_zh: 输送机滚筒/托辊, demand: [3, 4, 3], supply: [4, 5, 4], execution: [3, 3, 2], defensibility: 4, economics: 3, evidence_confidence: 0.80, raw_total: 69.7, risk_adjusted_total: 55.7, stage: reserve}
+  - {id: PM-009, name_zh: 工业刷, demand: [4, 5, 4], supply: [3, 4, 3], execution: [4, 4, 3], defensibility: 3.5, economics: 4, evidence_confidence: 0.80, raw_total: 75.7, risk_adjusted_total: 60.5, stage: reserve}
+  - {id: PM-010, name_zh: 普通离心泵, demand: [5, 4, 3], supply: [5, 4, 4], execution: [2, 2, 2], defensibility: 3, economics: 3, evidence_confidence: 0.90, raw_total: 66.3, risk_adjusted_total: 59.7, stage: deferred_risk}
+  - {id: PM-011, name_zh: 通用工业阀门, demand: [5, 4, 3], supply: [5, 4, 5], execution: [2, 3, 2], defensibility: 3.5, economics: 3, evidence_confidence: 0.90, raw_total: 71.0, risk_adjusted_total: 63.9, stage: deferred_risk}
+  - {id: PM-012, name_zh: 工业风机/鼓风机, demand: [4, 3, 3], supply: [4, 4, 4], execution: [2, 2, 2], defensibility: 3.5, economics: 2.5, evidence_confidence: 0.85, raw_total: 62.2, risk_adjusted_total: 52.8, stage: deferred_risk}
+  - {id: PM-013, name_zh: 工业过滤元件, demand: [5, 5, 4], supply: [4, 4, 4], execution: [3, 3, 3], defensibility: 4.5, economics: 4.5, evidence_confidence: 0.90, raw_total: 82.8, risk_adjusted_total: 74.5, stage: primary_poc}
+  - {id: PM-014, name_zh: 商用不锈钢工作台/水槽, demand: [4, 3, 4], supply: [4, 3, 4], execution: [3, 2, 3], defensibility: 2, economics: 2, evidence_confidence: 0.85, raw_total: 57.7, risk_adjusted_total: 49.0, stage: reserve}
+  - {id: PM-015, name_zh: 实验室家具, demand: [5, 3, 3], supply: [3, 4, 3], execution: [2, 1, 1], defensibility: 4, economics: 2.5, evidence_confidence: 0.90, raw_total: 60.5, risk_adjusted_total: 54.5, stage: deferred_risk}
+  - {id: PM-016, name_zh: PET/PP工业防护托盘, demand: [3, 5, 4], supply: [4, 4, 4], execution: [4, 3, 4], defensibility: 4.5, economics: 3.5, evidence_confidence: 0.80, raw_total: 79.2, risk_adjusted_total: 63.3, stage: buyer_led_only}
+  - {id: PM-017, name_zh: 可循环物流箱/托盘, demand: [4, 5, 4], supply: [4, 3, 4], execution: [3, 2, 3], defensibility: 3.5, economics: 3, evidence_confidence: 0.85, raw_total: 70.0, risk_adjusted_total: 59.5, stage: reserve}
+  - {id: PM-018, name_zh: 光伏安装支架, demand: [5, 3, 4], supply: [5, 4, 4], execution: [2, 2, 1], defensibility: 2.5, economics: 2.5, evidence_confidence: 0.85, raw_total: 61.5, risk_adjusted_total: 52.3, stage: deferred_risk}
+  - {id: PM-019, name_zh: 仓储货架及组件, demand: [5, 3, 3], supply: [4, 4, 4], execution: [2, 1, 1], defensibility: 3.5, economics: 2, evidence_confidence: 0.90, raw_total: 59.7, risk_adjusted_total: 53.7, stage: deferred_risk}
+  - {id: PM-020, name_zh: 农业灌溉接头/滴灌组件, demand: [4, 5, 5], supply: [4, 4, 4], execution: [4, 5, 3], defensibility: 2.5, economics: 4, evidence_confidence: 0.85, raw_total: 77.3, risk_adjusted_total: 65.7, stage: reserve}
+
+decision:
+  primary_product: PM-013
+  primary_markets: [DE, NL]
+  challenger_product: PM-005
+  challenger_markets: [DE, US]
+  buyer_led_products: [PM-003, PM-016, PM-001, PM-004]
+  benchmark_product: PM-006
+  market_specific_reserve: PM-020
+  irreversible_actions_authorized: false
+

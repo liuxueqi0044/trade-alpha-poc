@@ -1,0 +1,144 @@
+schema_version: 1
+observed_at: 2026-08-25T00:00:00Z
+status: public_research_only_no_supplier_contacted
+target: general_industrial_non_toxic_non_combustible_dry_dust_filter_cartridges
+count: 12
+warning: Evidence tiers are research readiness, not approved-supplier status.
+tier_meaning:
+  A: target product match and two independent evidence types
+  B_plus: strong target or official manufacturing trace, but one evidence/document gap remains
+  B: single-source, product-boundary, or manufacturer/integrator ambiguity remains
+
+suppliers:
+  - id: CN01
+    name: 石家庄一通过滤器设备制造有限公司
+    location: 河北石家庄循环化工园
+    tier: A
+    target_fit: dry_dust_cartridge_and_ventilation_air_filter
+    evidence:
+      - {type: company_product_and_factory, url: https://www.ytglq.com/aboutus.html}
+      - {type: external_patent_record, url: https://patents.google.com/patent/CN214634904U/zh}
+    manufacturing_signal: Company site shows a workshop, product range, and testing claims; external patent record names the entity for a composite filter cartridge.
+    red_flags: Site also covers pressure, high-purity, food, and pharmaceutical applications; require product-line isolation.
+    documents_missing: [business_license, manufacturing_address_proof, environmental_or_permit_record, ISO_certificate_verification, equipment_list, efficiency_pressure_drop_dust_holding_tests, MOQ_and_export_terms]
+  - id: CN02
+    name: 新乡市元亨机械有限公司
+    location: 河南新乡过滤产业园
+    tier: A
+    target_fit: filter_element_and_filter_manufacturing_possible_dry_air_extension
+    evidence:
+      - {type: company_product_and_factory, url: https://yuanhengjx.cn/}
+      - {type: formal_exhibitor_profile, url: 'https://www.chinacsfe.com/csfe-expo/news.asp?id=1522'}
+      - {type: environmental_project_file, url: https://www.cznd.gov.cn/uploadfile/cznd/2024/0409/20240409132939_41026.pdf}
+    manufacturing_signal: Independent exhibitor/project evidence references production equipment and filter-related manufacturing.
+    red_flags: Dry-dust complete-cartridge processes are not yet confirmed.
+    documents_missing: [business_license, exact_factory_site, dry_dust_catalogue, pleating_endcap_bonding_sealing_equipment, calibrated_test_list, ISO_verification, MOQ_and_export_terms]
+  - id: CN03
+    name: 新乡市中汇过滤技术有限公司
+    location: 河南新乡
+    tier: B_plus
+    target_fit: pleated_air_and_flame_retardant_filter_cartridges
+    evidence:
+      - {type: company_product_process_and_export_claim, url: https://www.xxzhonghui.com/}
+      - {type: patent_intensive_product_claim, url: https://www.xxzhonghui.com/}
+    manufacturing_signal: Site describes pleating media, end caps, support mesh, seals, and adhesive processes.
+    red_flags: Independent patent/government page was not captured; flame-retardant claims and combustible-dust use must not enter the first trial.
+    documents_missing: [official_patent_or_government_record, business_license, factory_address, dry_dust_test_reports, ISO_verification, traceability_sample, MOQ_and_export_terms]
+  - id: CN04
+    name: 广东志远环保设备有限公司
+    location: 广东吴川
+    tier: B_plus
+    target_fit: high_efficiency_low_emission_filter_cartridge_line
+    evidence:
+      - {type: government_environmental_acceptance_notice, url: https://www.gdwc.gov.cn/bmzz/wcsrmzfw/zdlyxxgk/hjbh/kqhjxx/content/post_2026507.html}
+      - {type: government_environmental_report, url: https://www.gdwc.gov.cn/attachment/0/246/246028/2026507.pdf}
+    manufacturing_signal: Official filing identifies the project, site, production equipment, and filter-cartridge line.
+    red_flags: Both links are the same official evidence family; current operation and general-industry replacement capability remain unknown.
+    documents_missing: [business_license, commissioning_acceptance, current_capacity, product_catalogue, company_contact_page, test_capability, MOQ_and_export_terms]
+  - id: CN05
+    name: 广州市华滤环保设备有限公司 / 华滤环保（广东）有限公司
+    location: 广东广州
+    tier: B_plus
+    legal_entity_relationship_verified: false
+    target_fit: pleated_industrial_dust_filter_cartridge
+    evidence:
+      - {type: company_product_and_technical_claim, url: https://www.farrleey.com/}
+    manufacturing_signal: Site describes pleated dust cartridges and custom dust-control solutions.
+    red_flags: Legal-entity relationship, claimed standards work, and independent evidence are not yet verified; some battery-industry dust may be special-risk.
+    documents_missing: [business_license_and_entity_relationship, official_standard_or_association_record, factory_address, environmental_record, target_general_dust_catalogue, test_reports, MOQ_and_export_terms]
+  - id: CN06
+    name: 江阴市人和环保设备有限公司
+    location: 江苏江阴
+    tier: B
+    target_fit: polyester_membrane_welding_fume_and_pulse_pleated_cartridges
+    evidence:
+      - {type: company_product_page, url: https://rhfilter001.sunmen.com/cn/}
+    manufacturing_signal: Detailed public product descriptions cover filter media and several dry-air cartridge formats.
+    red_flags: Single-source evidence; site platform/ownership and current production must be verified.
+    documents_missing: [business_license, official_factory_or_environmental_record, in_house_process_list, test_reports, safe_dust_use_statement, MOQ_and_export_terms]
+  - id: CN07
+    name: 山东华睿电气有限公司
+    location: 山东
+    tier: B
+    target_fit: dry_dust_collector_system_candidate
+    evidence:
+      - {type: official_industrial_procurement_award, url: https://www.zmzb.com/cms/channel/ywgg4hw/60589.htm}
+    manufacturing_signal: Procurement evidence links the entity to dry dust collector supply.
+    red_flags: Complete equipment supply does not prove in-house replacement-cartridge production.
+    documents_missing: [business_license, filter_cartridge_make_or_buy_statement, factory_and_equipment, general_manufacturing_scope, test_reports, MOQ_and_export_terms]
+  - id: CN08
+    name: 徐州赛孚瑞科高分子材料有限公司
+    location: 江苏徐州
+    tier: B
+    target_fit: dry_dust_collector_and_cartridge_parts_candidate
+    evidence:
+      - {type: official_industrial_procurement_candidate, url: https://www.zmzb.com/cms/channel/ywgg4hw/60589.htm}
+      - {type: parts_procurement_trace, url: https://st.jrzb.com/purchases/2026-08-14.6abf66fe9340ce7d316abdf5ff8a23c5}
+    manufacturing_signal: Public records associate the entity and model numbers with dry dust collector parts.
+    red_flags: Evidence is mining-related and may involve safety-certified special conditions; manufacturing ownership is unproven.
+    documents_missing: [business_license, ordinary_industrial_product_line, non_mining_scope, cartridge_in_house_processes, test_reports, MOQ_and_export_terms]
+  - id: CN09
+    name: 新乡市顺和过滤设备有限公司
+    location: 河南新乡
+    tier: B
+    target_fit: replacement_filter_elements_broad
+    evidence:
+      - {type: company_product_claim, url: https://www.shunfilter.com/}
+    manufacturing_signal: Site claims national-standard and replacement filter elements.
+    red_flags: Single-source and weighted toward hydraulic/oil-station products; dry-dust fit not established.
+    documents_missing: [independent_manufacturing_record, business_license, dry_dust_catalogue, process_equipment, test_reports, MOQ_and_export_terms]
+  - id: CN10
+    name: 新乡市曼菲过滤设备有限公司
+    location: 河南新乡
+    tier: B
+    target_fit: filter_element_OEM_broad
+    evidence:
+      - {type: company_quality_and_OEM_claim, url: https://xxmfgl.com/}
+    manufacturing_signal: Site claims incoming, in-process, and finished-product inspection and OEM capability.
+    red_flags: Hydraulic accessory focus and single-source evidence.
+    documents_missing: [independent_manufacturing_record, business_license, dry_dust_line, factory_equipment, calibrated_tests, MOQ_and_export_terms]
+  - id: CN11
+    name: 新乡市华航滤清器有限公司
+    location: 河南新乡先进制造开发区
+    tier: B
+    target_fit: industrial_filter_and_sintered_media_broad
+    evidence:
+      - {type: company_factory_and_product_claim, url: https://huahangfilter.com/}
+    manufacturing_signal: Site claims a production base and industrial filter products.
+    red_flags: Single-source; visible range is weighted toward sintered/metal industrial filtration.
+    documents_missing: [government_patent_procurement_or_environmental_record, business_license, dry_dust_cartridge_line, test_reports, MOQ_and_export_terms]
+  - id: CN12
+    name: 合肥格兰过滤系统有限公司
+    location: 安徽合肥
+    tier: B
+    target_fit: multi_cartridge_air_filter_assembly_candidate
+    evidence:
+      - {type: external_patent_record, url: https://patents.google.com/patent/CN223774569U/zh}
+    manufacturing_signal: Patent record names the entity for a connected multi-cartridge air-filter assembly.
+    red_flags: Patent alone does not prove a factory, current production, or replacement cartridge manufacture.
+    documents_missing: [company_website, business_license, factory_address, manufacturing_record, dry_dust_product_catalogue, equipment_tests, MOQ_and_export_terms]
+
+strict_A_ids: [CN01, CN02]
+provisional_B_plus_ids: [CN03, CN04, CN05]
+document_request_sequence: [CN01, CN02, CN03, CN04, CN05, CN06]
+external_contact_made: false

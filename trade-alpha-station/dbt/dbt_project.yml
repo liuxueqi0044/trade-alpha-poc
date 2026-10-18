@@ -1,0 +1,9 @@
+name: trade_alpha_quality
+version: '1.0.0'
+config-version: 2
+profile: trade_alpha
+model-paths: [models]
+test-paths: [tests]
+models:
+  trade_alpha_quality:
+    +materialized: view
